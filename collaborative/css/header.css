@@ -1,0 +1,457 @@
+/* Font -------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, input, button, textarea, select {
+    font: 16px 'Roboto', sans-serif;
+}
+
+/* Layout ------------------------------------------------------------------ */
+
+/* Ensure body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Container to hold header and main content */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid: auto auto 1fr auto / auto;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;  /* Ensures the content takes up the remaining space */
+    overflow-y: auto;  /* Adds scrolling if the content overflows */
+}
+
+header {
+    background-color: #f8f9fa;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 20px 45px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000; /* Ensure the header stays on top of other elements */
+    box-shadow: 0 4px 2px -2px rgb(209, 209, 209); 
+}
+
+/* Header container layout */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Space out items in the header */
+    align-items: center; 
+    width: 100%;
+    padding: 0 10px; /* Ensure space around the header elements */
+}
+
+/* Header title and logo */
+header h1 {
+    margin: 0;
+    padding-left: 20px;
+    background: url(/image/petlogo.png) no-repeat left / 30px;
+    font-size: 24px;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between logo and text */
+}
+
+h1 .logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+}
+
+header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Header Icons layout */
+.header-icons {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+/* Adjusting icon size and hover */
+.header-icons i {
+    font-size: 25px;
+    cursor: pointer; 
+    color: #666;
+}
+
+.header-icons i:hover {
+    color: #505050;
+}
+
+/* Responsive Media Query Adjustments */
+@media (max-width: 1024px) {
+    header {
+        height: auto;
+        padding: 10px 5%;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+        background-size: 25px;
+        padding-left: 30px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-icons {
+        gap: 10px;
+    }
+}
+
+/* Navigation Styling */
+nav {
+    padding: 0 50px;
+    display: flex;
+}
+
+nav a {
+    padding: 5px 10px;
+    color: #fff;
+    background: #666;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background: #333;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.nav-item {
+    padding: 10px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active button style */
+.actives {
+    background-color: rgba(249, 183, 0, 0.982);
+    color: black;
+}
+
+
+
+.nav-item:hover {
+    background-color:#f28500;
+    border-radius: 20px;
+}
+
+/* Styling the Login/Signup button */
+.login-signup-btn {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded corners to match the button shape */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: normal;
+    justify-content: center; /* Ensure text and icon are centered */
+}
+
+/* Icon styling */
+.login-signup-btn i {
+    margin-right: 10px; /* Space between the icon and the text */
+    font-size: 18px;
+    color: #f28500; /* Orange color for the icon */
+}
+
+/* Hover effect for the button */
+.login-signup-btn:hover {
+    background-color: #333;
+}
+
+/* Cart Button Styling */
+#cartButton {
+    margin-right: 15px;
+}
+
+/* Main content padding */
+main {
+    padding: 20px 50px;
+}
+
+main h1 {
+    margin-top: 0;
+}
+
+/* User Dropdown Styling */
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Hiding the user icon */
+#user-icon {
+    display: none;
+}
+
+/* Styling for the Login/Logout text */
+#user-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    padding: 10px 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;  /* Positioned below the text */
+    right: 0;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown-menu ul li a:hover {
+    background: #f4f4f4;
+}
+
+/* Show dropdown when clicked */
+.user-dropdown.open .dropdown-menu {
+    display: block;
+}
+
+/* Darkmode CSS */
+body.darkmode {
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+
+.darkmode header,
+.darkmode nav,
+.darkmode footer {
+    background-color: var(--base-variant);
+    color: var(--text-color);
+}
+
+.darkmode h1,
+.darkmode h2,
+.darkmode h3,
+.darkmode h4,
+.darkmode h5,
+.darkmode h6,
+.darkmode p,
+.darkmode span,
+.darkmode a {
+    color: var(--text-color);
+}
+
+.darkmode {
+    --base-color: #070b1d;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+}
+
+section {
+    background-color: var(--base-variant);
+}
+
+/* Button Styling */
+button {
+    border: none;
+    padding: .8em 2em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+}
+
+/* Theme Switch Button */
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    top: 20px;
+    right: 20px;
+    margin-right: 0;
+}
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+.profile-img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 4px; /* use 0 for sharp corners, 50% for circle */
+    margin-right: 6px;
+    vertical-align: middle;
+}
+/* Responsive Media Query Adjustments */
+@media (max-width: 1024px) {
+    header {
+        padding: 10px 5%;
+    }
+
+    .header-container {
+        flex-direction: row; /* Ensures items are aligned in a row */
+        justify-content: space-between; /* Spaces out the logo, text, and icons */
+        align-items: center; /* Center align vertically */
+    }
+
+    .header-icons {
+        gap: 15px;
+        justify-content: flex-end; /* Icons aligned to the right */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .header-container {
+        flex-direction: row; /* Keeps the items in a row for tablets and smaller screens */
+        justify-content: space-between; /* Ensures even space between logo and icons */
+        align-items: center; /* Centers items vertically */
+    }
+
+    .header-icons {
+        gap: 15px;
+        justify-content: flex-end; /* Align icons to the right */
+    }
+
+    header h1 {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 10px;
+    }
+
+    .header-container {
+        flex-direction: row; /* Items remain in a row */
+        justify-content: space-between; /* Keeps the space between items */
+        align-items: center; /* Vertically aligns all header items */
+    }
+
+    .header-icons {
+        gap: 10px;
+        justify-content: flex-end; /* Right-aligns icons */
+    }
+
+    header h1 {
+        font-size: 18px;
+        padding-left: 5px;
+    }
+}

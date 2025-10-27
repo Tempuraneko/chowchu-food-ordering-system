@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+:root {
+   --main-color: #8e44ad;
+   --red: #e74c3c;
+   --oragen: #f39c12;
+   --white: #fff;
+   --black: #2c3e50;
+   --light-color: #888;
+   --light-bg: #eee;
+   --border: .1rem solid rgba(0, 0, 0, .2);
+}
+
+* {
+   font-family: "Times New Roman", Times, serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+}
+
+*::selection {
+   background-color: var(--main-color);
+   color: #fff;
+}
+
+*::-webkit-scrollbar {
+   height: .5rem;
+   width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+   background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+   background-color: var(--main-color);
+}
+
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body {
+   background-color: var(--light-bg);
+   padding-left: 30rem;
+   /* padding-bottom: 7rem; */
+}
+
+body.dark {
+   --white: #222;
+   --black: #fff;
+   --light-color: #aaa;
+   --light-bg: #333;
+   --border: .1rem solid rgba(255, 255, 255, .2);
+}
+
+body.active {
+   padding-left: 0;
+}
+
+section {
+   padding: 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.btn,
+.option-btn,
+.delete-btn,
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn {
+   border-radius: .5rem;
+   padding: 1rem 1rem;
+   font-size: 1rem;
+   color: #fff;
+   margin-top: 1rem;
+   text-transform: capitalize;
+   cursor: pointer;
+   text-align: center;
+}
+
+
+/* Added */
+.profile {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.name-and-role {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.name-and-role h3 {
+   margin: 0;
+}
+
+.name-and-role span {
+   font-size: 14px;
+   color: gray;
+}
+
+.profile img {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   margin-bottom: 10px;
+}
+
+.droplist-btn {
+   margin-top: 10px;
+   padding: 10px 20px;
+   background-color: orange;
+   color: white;
+   text-decoration: none;
+   border-radius: 8px;
+   font-size: 16px;
+   font-weight: bold;
+   transition: all 0.3s ease;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.droplist-btn:hover {
+   background-color: darkorange;
+   color: white;
+   transform: translateY(-3px);
+   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.flex-btn a {
+   padding: 8px 12px;
+   text-decoration: none;
+   border: 1px solid orange;
+   border-radius: 5px;
+}
+
+/* Dropdown Menu */
+
+#dropdown-menu {
+   position: absolute;
+   top: 120%;
+   right: 0;
+   background-color: var(--white);
+   border: var(--border);
+   border-radius: 0.5rem;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+   display: none;
+   z-index: 1000;
+   min-width: 200px;
+   padding: 1rem;
+}
+
+#dropdown-menu .user-info {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   padding-bottom: 1rem;
+   border-bottom: var(--border);
+}
+
+#dropdown-menu .user-info .profile-pic {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   object-fit: cover;
+   border: var(--border);
+}
+
+#dropdown-menu .user-info .user-name {
+   font-size: 1.6rem;
+   color: var(--black);
+   font-weight: bold;
+}
+
+#dropdown-menu ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+#dropdown-menu ul li {
+   font-size: 1.4rem;
+   color: var(--black);
+}
+
+#dropdown-menu ul li a {
+   color: var(--black);
+   text-decoration: none;
+   padding: 0.5rem 1rem;
+   border-radius: 0.5rem;
+   display: block;
+   transition: background-color 0.3s;
+}
+
+#dropdown-menu ul li a:hover {
+   background-color: var(--light-bg);
+   color: var(--main-color);
+}
+
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn {
+   display: inline-block;
+}
+
+.option-btn,
+.inline-option-btn {
+   background-color: var(--oragen);
+   font-size: 2rem;
+   padding: 10px;
+   margin: 2rem;
+}
+
+.delete-btn,
+.inline-delete-btn {
+   background-color: var(--red);
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover,
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover {
+   background-color: var(--black);
+   color: var(--white);
+}
+
+.flex-btn {
+   display: flex;
+   gap: 1rem;
+}
+
+.heading {
+   padding-bottom: 1.8rem;
+   border-bottom: var(--border);
+   font-size: 2.5rem;
+   color: var(--black);
+   text-transform: capitalize;
+   margin-bottom: 2rem;
+}
+
+.header {
+   background-color: var(--white);
+   border-bottom: var(--border);
+   position: sticky;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 1000;
+}
+
+.header .flex {
+   padding: 1.5rem 2rem;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+}
+
+.header .flex .logo {
+   font-size: 2.5rem;
+   color: var(--black);
+   font-weight: bolder;
+}
+
+.header .flex .search-form {
+   width: 50rem;
+   border-radius: .5rem;
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   padding: 1.5rem 2rem;
+   background-color: var(--light-bg);
+}
+
+.header .flex .search-form input {
+   width: 100%;
+   background: none;
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.header .flex .search-form button {
+   font-size: 2rem;
+   color: var(--black);
+   cursor: pointer;
+   background: none;
+}
+
+.header .flex .search-form button:hover {
+   color: var(--main-color);
+}
+
+.header .flex .icons div {
+   font-size: 2rem;
+   color: var(--black);
+   border-radius: .5rem;
+   height: 4.5rem;
+   cursor: pointer;
+   width: 4.5rem;
+   line-height: 4.4rem;
+   background-color: var(--light-bg);
+   text-align: center;
+   margin-left: .5rem;
+}
+
+.header .flex .icons div:hover {
+   background-color: var(--black);
+   color: var(--white);
+}
+
+#search-btn {
+   display: none;
+}
+
+.header .flex .profile {
+   position: absolute;
+   top: 120%;
+   right: 2rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+   text-align: center;
+   width: 30rem;
+   transform: scale(0);
+   transform-origin: top right;
+}
+
+.header .flex .profile.active {
+   transform: scale(1);
+   transition: .2s linear;
+}
+
+.header .flex .profile img {
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: .5rem;
+}
+
+.header .flex .profile h3 {
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.header .flex .profile span {
+   color: var(--light-color);
+   font-size: 1.6rem;
+}
+
+.header .flex .profile .flex-btn {
+   margin-top: .5rem;
+}
+
+.side-bar {
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 30rem;
+   background-color: var(--white);
+   border-right: var(--border);
+   z-index: 1200;
+   left: 0;
+   overflow-y: auto;
+   overflow-x: hidden;
+   transition: left 0.3s ease-in-out;
+}
+
+.side-bar.active {
+   left: -31rem;
+}
+
+.side-bar .close-side-bar {
+   text-align: right;
+   padding: 2rem;
+   padding-bottom: 0;
+   display: block;
+}
+
+.side-bar .close-side-bar i {
+   height: 4.5rem;
+   width: 4.5rem;
+   left: -31rem;
+   line-height: 4.4rem;
+   font-size: 2.5rem;
+   color: #fff;
+   cursor: pointer;
+   background-color: var(--red);
+   text-align: center;
+   border-radius: 0.5rem;
+   transition: background-color 0.2s linear;
+}
+
+.side-bar .close-side-bar i:hover {
+   background-color: var(--black);
+}
+
+.side-bar .profile {
+   padding: 3rem 2rem;
+   text-align: center;
+}
+
+.side-bar .profile img {
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: 0.5rem;
+}
+
+.side-bar .profile h3 {
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.side-bar .profile span {
+   color: var(--light-color);
+   font-size: 1.6rem;
+}
+
+.side-bar .profile .flex-btn {
+   margin-top: 0.5rem;
+}
+
+.side-bar .navbar a {
+   display: block;
+   padding: 2rem;
+   margin: 0.5rem 0;
+   font-size: 1.8rem;
+}
+
+.side-bar .navbar a i {
+   color: var(--main-color);
+   margin-right: 1.5rem;
+   transition: 0.2s linear;
+}
+
+.side-bar .navbar a span {
+   color: var(--light-color);
+}
+
+.side-bar .navbar a:hover {
+   background-color: var(--light-bg);
+}
+
+.side-bar .navbar a:hover i {
+   margin-right: 2.5rem;
+}
+
+
+.dashboard .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   align-items: flex-start;
+   justify-content: center;
+   gap: 1.5rem;
+}
+
+.dashboard .box-container .box {
+   padding: 2rem;
+   border-radius: .5rem;
+   background-color: var(--white);
+   text-align: center;
+}
+
+.dashboard .box-container .box h3 {
+   margin-bottom: .5rem;
+   font-size: 2.5rem;
+   color: var(--black);
+   margin-bottom: 1.5rem;
+}
+
+.dashboard .box-container .box p {
+   font-size: 2rem;
+   color: var(--light-color);
+   padding: 1rem 1.5rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   margin: 1rem 0;
+}
+
+.box-info {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   justify-content: center;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.box-info li {
+   flex: 1 1 200px;
+   max-width: 350px;
+   background: #f7f7f7;
+   padding: 1.5rem;
+   border-radius: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   transition: all 0.3s ease;
+}
+
+.box-info li:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.box-info li i {
+   font-size: 3.5rem;
+   color: #007bff;
+}
+
+.box-info li .text {
+   display: flex;
+   flex-direction: column;
+}
+
+.box-info li .text h3 {
+   font-size: 2.5rem;
+   margin: 0;
+   color: #444;
+}
+
+.box-info li .text p {
+   font-size: 2rem;
+   color: #666;
+   margin: 0;
+}
+
+.dark-mode-toggle {
+   position: relative;
+   display: inline-block;
+   width: 50px;
+   height: 25px;
+}
+
+
+
+@media (max-width:1200px) {
+
+   body {
+      padding-left: 0;
+   }
+
+   .side-bar {
+      transition: .2s linear;
+      left: -30rem;
+   }
+
+   .side-bar.active {
+      left: 0;
+      box-shadow: 0 0 0 100vw rgba(0, 0, 0, .7);
+   }
+
+   .side-bar .close-side-bar {
+      display: block;
+   }
+
+}
+
+@media (max-width:991px) {
+
+   html {
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px) {
+
+   #search-btn {
+      display: inline-block;
+   }
+
+   .header .flex .search-form {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      width: auto;
+      border-top: var(--border);
+      border-bottom: var(--border);
+      background-color: var(--white);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transition: .2s linear;
+   }
+
+   .header .flex .search-form.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+}
+
+@media (max-width:450px) {
+
+   html {
+      font-size: 50%;
+   }
+
+   .heading {
+      font-size: 2rem;
+   }
+
+   .flex-btn {
+      flex-flow: column;
+      gap: 0;
+   }
+
+}
+
+@media (max-width: 768px) {
+   .box-info {
+      flex-direction: column;
+   }
+}
+
+/*Flag message*/
+
+#info {
+   position: fixed;
+   color: #fff;
+   background: #666;
+   border: 1px solid #333;
+   border-radius: 5px;
+   padding: 10px 20px;
+   left: 50%;
+   translate: -50% 0;
+   z-index: 999;
+   font-size: 2em;
+   top: -100px;
+   opacity: 0;
+}
+
+#info:not(:empty) {
+   animation: fade 5s;
+}
+
+@keyframes fade {
+   0% {
+      top: -100px;
+      opacity: 0;
+   }
+
+   10% {
+      top: 100px;
+      opacity: 1;
+   }
+
+   90% {
+      top: 100px;
+      opacity: 1;
+   }
+
+   100% {
+      top: -100px;
+      opacity: 0;
+   }
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+   position: absolute;
+   top: 40px;
+   right: 0;
+   background-color: #fff;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   border-radius: 8px;
+   padding: 10px;
+   z-index: 1000;
+   display: none;
+}
+
+.dropdown-menu ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.dropdown-menu ul li {
+   margin: 10px 0;
+}
+
+.dropdown-menu ul li a {
+   text-decoration: none;
+   color: #333;
+   padding: 5px 10px;
+   display: block;
+   border-radius: 4px;
+}
+
+.dropdown-menu ul li a:hover {
+   background-color: #f0f0f0;
+}
+
+.hidden {
+   display: none !important;
+}
+
+span.err {
+   color: red;
+   font-size: 1.6rem;
+}

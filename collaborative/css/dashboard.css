@@ -1,0 +1,33 @@
+.chart-container {
+    display: flex;
+    justify-content: center; 
+    height: calc(100vh - 100px); 
+}
+
+#myChart {
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background: #fff; 
+    border-radius: 8px; 
+    padding: 20px;
+}
+
+.dashboard {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #myChart {
+        height: 400px; /* Adjust chart height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #myChart {
+        height: 300px; /* Further adjust chart height for very small screens */
+    }
+}

@@ -1,0 +1,240 @@
+.order-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff5722;
+}
+
+/* Container for order details */
+.order-detail-container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Order Status */
+.order-status-container {
+    text-align: right;
+}
+
+.order-status {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+}
+
+.order-status.pending {
+    background-color: #ff9800;
+}
+
+.order-status.completed {
+    background-color: #4caf50;
+}
+
+.order-status.delivered {
+    background-color: #2196f3;
+}
+
+/* Order Items */
+.order-items {
+    margin-top: 30px;
+}
+
+.order-items table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-items th,
+.order-items td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.order-items th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.order-items td {
+    background-color: #fff;
+}
+
+.order-items tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Payment Details */
+.payment-details {
+    margin-top: 30px;
+}
+
+.payment-details h3 {
+    font-size: 20px;
+    color: #555;
+}
+
+.payment-details p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Button Styles */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-form {
+    display: inline-block;
+}
+
+.rate-btn, .receipt-btn {
+    padding: 10px 15px;
+    background-color: #00bcd4;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.rate-btn:hover, .receipt-btn:hover {
+    background-color: #0097a7;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Mobile Screens (up to 480px) */
+@media (max-width: 480px) {
+    .order-container {
+        width: 95%;
+    }
+
+    .order-detail-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .order-status-container {
+        text-align: center;
+    }
+
+    .shipping-address, .order-items, .payment-details {
+        margin-top: 15px;
+    }
+
+    .order-items table {
+        font-size: 12px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rate-btn, .receipt-btn {
+        margin-bottom: 10px;
+    }
+}
+
+/* Small to Medium Tablets (481px to 768px) */
+@media (max-width: 768px) {
+    .order-container {
+        width: 85%;
+    }
+
+    .order-detail-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .order-items table {
+        font-size: 14px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rate-btn, .receipt-btn {
+        margin-bottom: 10px;
+    }
+}
+
+/* Large Tablets (769px to 1024px) */
+@media (max-width: 1024px) {
+    .order-container {
+        width: 75%;
+    }
+
+    .order-detail-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .order-items table {
+        font-size: 16px;
+    }
+
+    .button-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Desktop Screens (1025px and above) */
+@media (min-width: 1025px) {
+    .order-container {
+        width: 60%;
+    }
+
+    .order-detail-container {
+        width: 70%;
+        padding: 25px;
+    }
+
+    .order-items table {
+        font-size: 18px;
+    }
+
+    .button-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

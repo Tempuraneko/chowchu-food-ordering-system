@@ -1,0 +1,260 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.vouchers-container {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+}
+
+
+.page-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.vouchers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.voucher-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.voucher-card:hover {
+    transform: translateY(-5px);
+}
+
+.voucher-card.used {
+    opacity: 0.7;
+    pointer-events: none;
+    border: 1px dashed #ccc;
+}
+
+
+.voucher-header {
+    background: linear-gradient(135deg, #f28500, #ff9e43);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.voucher-title {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.voucher-body {
+    padding: 20px;
+}
+
+.voucher-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.voucher-detail:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #666;
+}
+
+.detail-value {
+    color: #333;
+}
+
+.discount-value {
+    font-size: 1.5em;
+    color: #f28500;
+    font-weight: bold;
+}
+
+.voucher-footer {
+    background: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+}
+
+.use-btn {
+    background-color: #f28500;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.use-btn:hover {
+    background-color: #e07a00;
+}
+
+.no-vouchers {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.2em;
+}
+
+.voucher-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.terms-toggle {
+    color: #f28500;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.terms-content {
+    display: none;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 10px;
+    white-space: pre-line;
+    font-size: 0.9em;
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.profile-pic img {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-pic p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-menu li img {
+    width: 20px;
+}
+
+.main-wrapper {
+    display: flex;
+}
+
+/* Update container width to take remaining space after sidebar */
+.vouchers-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Grid with 3 vouchers per row */
+.vouchers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 1000px) {
+    .vouchers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .vouchers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive Grid: Adjust number of columns based on screen size */
+@media (max-width: 1000px) {
+    .vouchers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .vouchers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hide sidebar on small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide sidebar for mobile screens */
+    }
+
+    .main-wrapper {
+        flex-direction: column; /* Stack main content for small screens */
+    }
+}

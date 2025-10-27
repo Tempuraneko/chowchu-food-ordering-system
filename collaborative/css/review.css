@@ -1,0 +1,136 @@
+.review-container {
+    max-width: 800px; /* Optional: Set max-width for the review container */
+    margin: 0 auto;   /* This will center the container horizontally */
+    padding: 20px;    /* Add padding inside the container */
+    background-color: #fff; /* Optional: Add a background color */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better look */
+}
+.comment-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+.replies {
+    margin-left: 20px;
+    border-left: 2px solid #ddd;
+    padding-left: 10px;
+}
+
+.replies p {
+    font-style: italic;
+    color: #555;
+}
+
+/* For the review images to display properly */
+.review-media {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.review-img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Scale image on hover for a better user experience */
+.review-img:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for review container */
+.review-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.comment-box {
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Pagination */
+.review-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.review-pagination a {
+    margin: 0 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+}
+
+.review-pagination a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.review-pagination a.prev,
+.review-pagination a.next {
+    font-size: 1.2rem;
+}
+
+.review-media {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Adjust to your preferred width */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 50vh;
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 1000;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}

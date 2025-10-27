@@ -1,0 +1,134 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    /*background-image: url('../image/background1.jpg');*/
+    background-color: #C9DFEC;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.special-offers-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    overflow: auto;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.792);
+}
+
+.page-title {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.voucher-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.voucher-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.voucher-content {
+    max-width: 80%;
+}
+
+.voucher-title {
+    font-size: 20px;
+    color: #1abc9c;
+    margin-bottom: 10px;
+}
+
+.voucher-details {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.voucher-expiry {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.claim-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.claim-btn:hover {
+    background-color: #d68910;
+}
+
+.voucher-bg {
+    font-size: 40px;
+    opacity: 0.1;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    transform: rotate(-15deg);
+}
+
+.error-message {
+    background-color: #ffe0e0;
+    color: #c0392b;
+    padding: 10px 15px;
+    border-left: 4px solid #e74c3c;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .voucher-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .voucher-bg {
+        display: none;
+    }
+
+    .voucher-content {
+        max-width: 100%;
+    }
+}

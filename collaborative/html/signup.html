@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chowchu Sign Up</title>
+  <link rel="stylesheet" href="../css/signup.css" />
+</head>
+<body>
+  <div class="container">
+    <form class="signup-form" action="../member/signup.php" method="POST" enctype="multipart/form-data">
+      <img src="../images/chowchu.png" alt="Chowchu Logo" class="logo" />
+      <h1>Welcome Back</h1>
+      <p>Sign up with your email address and password</p>
+
+      <label>Account Name</label>
+      <input type="text" name="name" placeholder="Enter your name" required />
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password" required />
+
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="Enter email" required />
+
+      <label>Phone Number</label>
+      <input type="text" name="phone" placeholder="e.g. 014 – 584 2274" required />
+
+      <label>Profile Image</label>
+      <input type="file" name="profileImage" accept="image/*" required />
+
+      <button type="submit">Sign up</button>
+    </form>
+
+    <div class="signup-image">
+      <img src="../images/chocolate.png" alt="Chocolate" />
+    </div>
+  </div>
+    
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <h2>You Are Successfully Make an Account!</h2>
+        <p>Welcome To Join Us! Feel Free to Explore Our Product</p>
+        <img src="../images/check.png" alt="Success" />
+        <p>Return to <a href="login.html">sign in</a></p>
+      </div>
+    </div>
+    
+    <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const modal = document.getElementById("successModal");
+
+  if (urlParams.get("success") === "true") {
+    modal.style.display = "block";
+  }
+</script>
+</body>
+</html>
+

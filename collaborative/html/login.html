@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chowchu Login</title>
+  <link rel="stylesheet" href="../css/login.css" />
+  
+</head>
+<body>
+  <div class="container">
+    <form class="login-form" action="../member/login.php" method="POST">
+      <img src="../images/chowchu.png" alt="Chowchu Logo" class="logo" />
+      <h1>Welcome Back</h1>
+      <p>Sign in with your email address and password</p>
+
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="Enter email" required />
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password" required="" />
+
+      <button type="submit">Sign in</button>
+
+      <p class="signup-text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+      
+      <p class="forgot-text"><a href="forgot_password.html">Forgot Password?</a></p>
+    </form>
+
+    <div class="login-image">
+      <img src="../images/chocolate.png" alt="Chocolate" />
+    </div>
+  </div>
+</body>
+</html>

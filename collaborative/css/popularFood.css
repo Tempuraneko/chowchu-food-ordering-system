@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+
+.popular {
+    text-align: center;
+    padding: 50px 5%;
+    background-color: #f9f9f9;
+}
+
+.popular h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px; /* Adjusted for better scaling */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.popular .lead {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Product Grid - Responsive */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Product Card */
+.product-card {
+    width: 100%;
+    max-width: 320px;
+    min-width: 260px;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product Info */
+.product-info {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Product Name */
+.product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+/* Product Category */
+.product-category {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Price and Button */
+.price-btn-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Product Price */
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Order Button */
+.order-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background: #6c63ff;
+    color: #fff;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.order-btn:hover {
+    background: #4b4acb;
+    transform: scale(1.05);
+}
+
+/* ✨ Fully Responsive Adjustments ✨ */
+@media (max-width: 1024px) { /* Tablets */
+    .product-grid {
+        gap: 10px;
+    }
+
+    .product-card {
+        max-width: 280px;
+    }
+
+    .product-name {
+        font-size: 17px;
+    }
+
+    .order-btn {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .popular h2 {
+        font-size: 28px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-image img {
+        object-fit: contain;
+    }
+
+    .order-btn {
+        width: 100%; /* Full-width button for mobile */
+        padding: 12px;
+        text-align: center;
+    }
+
+    .product-price {
+        font-size: 15px;
+    }
+}
+
+
+/* add to cart */
+.modal1 {
+    display: none; 
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000; 
+}
+
+/* Modal Content */
+.modal-content1 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 380px; 
+    text-align: left; 
+    display: flex;
+    flex-direction: column; 
+    align-items: stretch; 
+    max-height: 100%; 
+    overflow-y: auto; 
+    position: absolute;
+    right: 0;
+}
+
+.modal-footer1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.product-image img {
+    width: 100%; /* Make sure image width doesn't exceed the modal width */
+    max-width: 100%; /* Prevent image from stretching beyond container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image scales well without overflow */
+    border-radius: 5px; /* Optional: rounds the image corners */
+}
+
+/* Quantity control styling */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between the buttons and input */
+}
+
+.quantity-btn {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #e1e1e1;
+}
+
+#quantity {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+/* Add to Basket button styling */
+#addToCart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#addToCart:hover {
+    background-color: #45a049;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Cart Container Styling */
+#cart-container {
+    display: none; /* Hidden initially */
+    position: fixed; /* Fixed position for cart */
+    top: 50px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    max-height: 70%; /* Prevent cart from overflowing */
+    overflow-y: auto;
+}
+
+/* Cart Items Container */
+#cart-items {
+    margin-top: 10px;
+}
+
+/* Cart Summary Styling */
+.cart-summary p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+    .modal-content1 {
+        width: 90%; /* Make modal responsive for smaller screens */
+    }
+}
+
+
+/* Phones and smaller tablets (Portrait) */
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 95%;
+        max-width: 360px;
+    }
+
+    .popular h2 {
+        font-size: 24px;
+    }
+
+    .product-image {
+        height: 160px;
+    }
+
+    .product-image img {
+        object-fit: contain;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .product-category {
+        font-size: 13px;
+    }
+
+    .product-price {
+        font-size: 15px;
+    }
+
+    .order-btn {
+        font-size: 13px;
+        padding: 10px 12px;
+        width: auto;
+    }
+    .quantity-control {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .quantity-btn {
+        font-size: 18px;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #quantity {
+        font-size: 16px;
+        width: 60px;
+        height: 40px;
+    }
+
+    .modal-content1 {
+        width: 95%;
+        max-width: 400px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* Extra small phones (<= 480px) */
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-image {
+        height: 140px;
+    }
+
+    .product-name {
+        font-size: 15px;
+    }
+
+    .btn order-btn {
+        font-size: 12px;
+        padding: 8px 10px;
+        width: 100%;  /* Optional: make it full width for mobile */
+        text-align: center;
+    }
+
+    .quantity-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    #quantity {
+        width: 50px;
+        font-size: 15px;
+    }
+
+    .modal-content1 {
+        width: 95%;
+        padding: 15px;
+    }
+}
